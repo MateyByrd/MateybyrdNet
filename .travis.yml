@@ -1,0 +1,10 @@
+
+install:
+  - npm install
+
+language: node_js
+node_js:
+  - "0.10"
+  - "4.0"
+  - "4.1"
+
