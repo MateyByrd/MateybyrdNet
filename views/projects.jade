@@ -2,13 +2,17 @@ extends layout
 
 block content
   p
-    h5 Active 
+    h5 Active projects
     - for (var i=0; i<projects.length; i++)
       .medium-6.columns(style='padding-left: 0px;')
         .div(class=projects[i].label)
           .project
             .name= projects[i].name
-              .label= projects[i].label
+              - if (projects[i].repository)
+                a(href=projects[i].repository, target='_blank')
+                  .label= projects[i].label
+              - else
+                .label= projects[i].label
             .body
               p= projects[i].description
                 

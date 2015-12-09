@@ -24,8 +24,12 @@
   padding-bottom: 0.5em;
 }
 
-li .selected {
-  border-bottom: 5px solid #2199e8;
+.top-bar li .selected {
+  border-bottom: 2px solid #2199e8;
+}
+
+.top-bar li:hover *:not(.selected) {
+  border-bottom: 2px solid #ec5840;
 }
 
 .private .label {
@@ -58,4 +62,12 @@ li .selected {
 
 .name .label {
   margin-left: 0.5em;
+}
+
+.open-source .project:hover {
+  border-left: 5px solid #ec5840;
+}
+
+.open-source .project:hover .label {
+  background-color: #ec5840;
 }

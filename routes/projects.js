@@ -4,11 +4,11 @@ var path = require('path');
 var projects, menuItems;
 
 require('fs').readFile('./routes/projects.json', 'utf8', function (err, data) {
-    if (err) throw err; // we'll not consider error handling for now
+    if (err) throw err;
     projects = JSON.parse(data);
 });
 require('fs').readFile('./routes/menuItems.json', 'utf8', function (err, data) {
-  if (err) throw err; // we'll not consider error handling for now
+  if (err) throw err;
   menuItems = JSON.parse(data);
 });
 
