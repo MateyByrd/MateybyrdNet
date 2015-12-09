@@ -1,0 +1,61 @@
+
+@import url("/foundation/css/foundation.css");
+
+.header-image {
+  position: relative;
+  background-position: center bottom;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 225px;
+  margin-bottom: 0.5em;
+}
+
+.header-image .copyright {
+  background-color: rgba(255, 255, 255, 0.6);
+  position: absolute;
+  font-size: 0.7em;
+  bottom: 6px;
+  right: 0px;
+  padding: 4px;
+}
+
+.top-bar .row {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+li .selected {
+  border-bottom: 5px solid #2199e8;
+}
+
+.private .label {
+  background-color: #ec5840;
+}
+
+.open-source .label {
+  background-color: #2199e8;
+}
+
+.project {
+  padding-left: 1em;
+}
+
+.open-source .project {
+  border-left: 5px solid #2199e8;
+}
+
+.private .project {
+  border-left: 5px solid #ec5840;
+}
+
+.project .name {
+  font-size: 1em;
+  margin-top: 1em;
+  padding-right: 1em;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.name .label {
+  margin-left: 0.5em;
+}

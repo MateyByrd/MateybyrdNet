@@ -1,0 +1,29 @@
+{
+	"projects": [
+		{
+			"name": "ARM2-D2",
+			"label": "open-source",
+			"description": "A school project in my final year, I have to build a robot arm that is able to do some cool stuff."
+		},
+		{
+			"name": "ExamPoll",
+			"label": "open-source",
+			"description": "In our final year at school we will have an exam-party where we decorate the entire school in a special theme, to help choose the theme of the party we need a poll that everyone can enter."
+		},
+		{
+			"name": "Chesster",
+			"label": "open-source",
+			"description": "A personal project that I am working on together with a designer from Prague. A chess game for mobile devices."
+		},
+		{
+			"name": "Movie Panel",
+			"label": "open-source",
+			"description": "A personal project for me and my friends to manage things when we are going to the movies, for example who buys the tickets, who paid (for the tickets) etc."
+		},
+		{
+			"name": "Mateybyrd.Net",
+			"label": "private",
+			"description": "One of the projects is building this website, currently not open source but it could be in the future."
+		}
+	]
+}

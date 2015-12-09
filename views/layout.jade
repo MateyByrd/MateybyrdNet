@@ -1,0 +1,36 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/foundation.min.css')
+    link(rel='stylesheet', href='/stylesheets/foundation-icons.css')
+    link(rel='stylesheet', href='/stylesheets/mateybyrdnet.css')
+    script(src='/javascripts/foundation.js')
+  body
+    //- Header
+    .top-bar
+      .row
+        .medium-11.medium-centered.columns
+          .top-bar-left
+            h4 Mateybyrd
+              small .Net
+          .top-bar-right
+            ul.menu
+              - if (menuItems) for (var i=0; i<menuItems.length; i++)
+                - var style = '';
+                - if (pageId == i) style = 'selected';
+                li
+                  a(class=style, href='#{menuItems[i].link}', target='#{menuItems[i].target}')= menuItems[i].name
+
+    //- Header image
+    a(style={color: 'red', background: 'green'})
+    .header-image(style='background-image: url(#{image})')
+      .copyright Image from 
+        a(href='httpL//www.rom.ac') ROM.AC
+    
+    //- Actual page
+    .row
+      .medium-10.medium-centered.columns
+          block content

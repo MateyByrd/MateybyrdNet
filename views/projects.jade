@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  p
+    h5 Active 
+    - for (var i=0; i<projects.length; i++)
+      .medium-6.columns(style='padding-left: 0px;')
+        .div(class=projects[i].label)
+          .project
+            .name= projects[i].name
+              .label= projects[i].label
+            .body
+              p= projects[i].description
+                
+                
