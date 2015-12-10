@@ -5,6 +5,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var http = require('http');
+var fs = require('fs');
+
+// routes
 var routes = require('./routes/index');
 var project = require('./routes/projects');
 
@@ -53,6 +57,30 @@ app.use(function(err, req, res, next) {
   res.render('error', {
     message: err.message,
     error: {}
+  });
+});
+
+
+// Testing at startup
+var dev = false;
+if (process.argv[2]=='dev') dev = true;
+
+var pagesToTest = ["/", "/projects"];
+var pages = pagesToTest.length;
+var pagesTested = 0;
+
+pagesToTest.forEach(function(value) {
+  var request = http.get("http://localhost:3000" + value, function(res) { 
+    if (res.statusCode != 200) 
+      throw new Error("http://localhost:3000" + value + " contains an error");
+    else 
+      console.log("http://localhost:3000" + value + " has been tested correctly");
+
+    pagesTested++;
+    if (dev && pagesTested >= pages) process.exit(0);
+}).on('error', function(e) 
+  { 
+    console.log('Error'); throw e; 
   });
 });
 
