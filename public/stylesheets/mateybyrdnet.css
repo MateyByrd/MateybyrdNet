@@ -24,13 +24,22 @@
   padding-bottom: 0.5em;
 }
 
+.top-bar li a {
+  border-bottom: 2px solid #eee;
+}
+
 .top-bar li .selected {
+  /*background-color: #eee;*/
   border-bottom: 2px solid #2199e8;
 }
 
-.top-bar li:hover *:not(.selected) {
-  border-bottom: 2px solid #ec5840;
+.top-bar li:hover a:not(.selected)  {
+  border-bottom: 2px solid #ddd;
 }
+
+/*.top-bar li:hover *:not(.selected) {*/
+  /*border-bottom: 2px solid #ddd;*/
+/*}*/
 
 .private .label {
   background-color: #ec5840;
