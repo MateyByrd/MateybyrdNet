@@ -73,10 +73,10 @@
   margin-left: 0.5em;
 }
 
-.open-source .project:hover {
-  border-left: 5px solid #ec5840;
-}
+/*.open-source .project:hover {*/
+  /*border-left: 5px solid #ec5840;*/
+/*}*/
 
-.open-source .project:hover .label {
+.label:hover {
   background-color: #ec5840;
 }
