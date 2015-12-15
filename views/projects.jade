@@ -5,7 +5,7 @@ block head
 
 block content
   p
-    h5 Active projects
+    //h5 Active projects
     .medium-6.columns(style='padding: 0px;')
       - for (var i=0; i<projects.length; i+=2)
         +project
@@ -14,16 +14,17 @@ block content
         +project
 
 mixin project
-        .small-12.columns(style='padding-left: 0px; height: 100%')
-          .div(class=projects[i].label)
+        .small-12.columns(style='padding-left: 0.2em; padding-right: 0.2em; height: 100%')
+          .div(class=projects[i].labels[0].css)
             .project
               .name= projects[i].name
-              .label= projects[i].label
-              - if (projects[i].repository)
-              a(href=projects[i].repository, target='_blank')
-                img(class='labelimage', src='/images/github-mark.png')
+              .labels
+                - for (var l=0; l<projects[i].labels.length; l++)
+                  .label(class=projects[i].labels[l].css)= projects[i].labels[l].text
+                - if (projects[i].repository)
+                  a(href=projects[i].repository, target='_blank')
+                    img(class='labelimage', src='/images/github-mark.png')
               .body
-                = 'Status: ' + projects[i].development
                 p= projects[i].description
                 
                 

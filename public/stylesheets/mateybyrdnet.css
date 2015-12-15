@@ -1,34 +1,46 @@
 
-@import url("/foundation/css/foundation.css");
+@import url("/public/stylesheets/foundation.min.css");
+
+/* All the general css for each page */
 
 .header-image {
   position: relative;
   background-position: center bottom;
   -webkit-background-size: cover;
   background-size: cover;
-  height: 225px;
+  height: 275px;
   margin-bottom: 0.5em;
+  border-bottom: 5px solid #ddd;
 }
 
 .header-image .copyright {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(30, 30, 30, 0.7);
   position: absolute;
   font-size: 0.7em;
   bottom: 6px;
   right: 0px;
   padding: 4px;
+  color: white;
 }
 
-.top-bar .row {
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+.row main {
+  background-color: rgb(240,240,240);
 }
 
-.top-bar li a {
+/*.top-bar .row {*/
+  /*padding-top: 0.5em;*/
+  /*padding-bottom: 0.5em;*/
+/*}*/
+
+.top-bar ul {
+  background-color: transparent;
+}
+
+.top-bar li a.menulink {
   border-bottom: 2px solid #eee;
 }
 
-.top-bar li .selected {
+.top-bar li a.selected {
   /*background-color: #eee;*/
   border-bottom: 2px solid #2199e8;
 }
@@ -41,42 +53,17 @@
   /*border-bottom: 2px solid #ddd;*/
 /*}*/
 
-.private .label {
-  background-color: #ec5840;
-}
 
-.open-source .label {
-  background-color: #2199e8;
-}
-
-.project {
-  padding-left: 1em;
-}
-
-.open-source .project {
-  border-left: 5px solid #2199e8;
-}
-
-.private .project {
-  border-left: 5px solid #ec5840;
-}
-
-.project .name {
-  font-size: 1em;
+.margin-top-1 {
   margin-top: 1em;
-  padding-right: 1em;
-  padding-bottom: 4px;
-  border-bottom: 1px solid #eee;
 }
 
-.name .label {
-  margin-left: 0.5em;
+.margin-top-2 {
+  margin-top: 2em;
 }
 
-/*.open-source .project:hover {*/
-  /*border-left: 5px solid #ec5840;*/
-/*}*/
-
-.label:hover {
-  background-color: #ec5840;
+.labelimage {
+  height: 1.5em;
+  widht: auto;
+  margin-left: 0.2em;
 }

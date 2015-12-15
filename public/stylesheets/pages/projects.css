@@ -1,8 +1,39 @@
 /* All the css for the projects page */
 
 .project {
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin-bottom: 1em;
   padding-left: 1em;
-  /*box-shadow: 2px 2px 0px rgba(95, 95, 95, 0.1);*/
+  padding-right: 1em;
+  box-shadow: 0 0 2px #aaa;
+}
+
+.label {
+  /*margin-left: 0.1em;*/
+  margin-right: 0.2em;
+}
+
+.project .name {
+  font-size: 1.3em;
+  margin-top: 1em;
+  padding-right: 1em;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.project .labels {
+  background-color: #eee;
+  border-bottom: 1px solid #eee;
+  padding-left: 0.2em;
+}
+
+.project .label {
+  margin-bottom: 0.2em;
+}
+
+.name .label {
+  margin-left: 0.5em;
 }
 
 .open-source .project {
@@ -10,27 +41,27 @@
 }
 
 .private .project {
-  border-left: 5px solid #ec5840;
+  border-left: 5px solid #FF9817;
 }
 
-.private .label {
-  background-color: #ec5840;
-}
-
-.open-source .label {
+.label .open-source {
   background-color: #2199e8;
 }
 
-.project .name {
-  font-size: 1em;
-  margin-top: 1em;
-  padding-right: 1em;
-  padding-bottom: 4px;
-  border-bottom: 1px solid #eee;
+.label .private {
+  background-color: #FF9817;
 }
 
-.name .label {
-  margin-left: 0.5em;
+.label.halted {
+  background-color: #FF9817;
+}
+
+.label.done {
+  background-color: #15E8B9;
+}
+
+.label.development {
+  background-color: #2D5CEA;
 }
 
 /*.open-source .project:hover {*/
