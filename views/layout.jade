@@ -7,31 +7,33 @@ html
     link(rel='stylesheet', href='/stylesheets/foundation.min.css')
     link(rel='stylesheet', href='/stylesheets/foundation-icons.css')
     link(rel='stylesheet', href='/stylesheets/mateybyrdnet.css')
-    script(src='/javascripts/foundation.js')
+    script(src='/javascripts/foundation.min.js')
+    block head
   body
-    //- Header
-    .top-bar
-      .row
-        .medium-11.medium-centered.columns
-          .top-bar-left
-            a(href="/")
-              h4 Mateybyrd
-                small .Net
-          .top-bar-right
-            ul.menu
-              - if (menuItems) for (var i=0; i<menuItems.length; i++)
-                - var style = '';
-                - if (pageId == i) style = 'selected';
-                li
-                  a(class=style, href='#{menuItems[i].link}', target='#{menuItems[i].target}')= menuItems[i].name
-
-    //- Header image
+    //- Header image and menu
     a(style={color: 'red', background: 'green'})
     .header-image(style='background-image: url(#{image})')
-      .copyright Image from 
-        a(href='httpL//www.rom.ac') ROM.AC
-    
+
+      .top-bar
+        .medium-11.medium-centered.columns
+          .top-bar-left(class='hide-for-small-only')
+            h4(style='color: white;') Mateybyrd
+              small .Net
+          .top-bar-right
+            ul.menu
+              li(class='show-for-small-only', style='color: white; padding-right: 1em;') Mateybyrd.Net
+              - if (menuItems) for (var i=0; i<menuItems.length; i++)
+                - var style = 'menulink';
+                - if (pageId == i) style += ' selected';
+                  li
+                    a(class=style, href='#{menuItems[i].link}', target='#{menuItems[i].target}')= menuItems[i].name
+
+      .copyright Image from
+        a(href='http://www.rom.ac')  ROM.AC
+
+    .margin-top-1
     //- Actual page
     .row
-      .medium-10.medium-centered.columns
+      .main
+        .medium-10.medium-centered.columns
           block content

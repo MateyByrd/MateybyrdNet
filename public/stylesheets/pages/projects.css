@@ -1,0 +1,42 @@
+/* All the css for the projects page */
+
+.project {
+  padding-left: 1em;
+  /*box-shadow: 2px 2px 0px rgba(95, 95, 95, 0.1);*/
+}
+
+.open-source .project {
+  border-left: 5px solid #2199e8;
+}
+
+.private .project {
+  border-left: 5px solid #ec5840;
+}
+
+.private .label {
+  background-color: #ec5840;
+}
+
+.open-source .label {
+  background-color: #2199e8;
+}
+
+.project .name {
+  font-size: 1em;
+  margin-top: 1em;
+  padding-right: 1em;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.name .label {
+  margin-left: 0.5em;
+}
+
+/*.open-source .project:hover {*/
+/*border-left: 5px solid #ec5840;*/
+/*}*/
+
+/*.label:hover {*/
+/*background-color: #ec5840;*/
+/*}*/
