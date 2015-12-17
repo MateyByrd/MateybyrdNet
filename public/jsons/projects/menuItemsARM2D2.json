@@ -1,0 +1,14 @@
+{
+  "menuItems": [
+    {
+      "name": "Home",
+      "link": "/",
+      "target": ""
+    },
+    {
+      "name": "Desccription",
+      "link": "/description",
+      "target": ""
+    }
+  ]
+}

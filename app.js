@@ -70,17 +70,17 @@ var pages = pagesToTest.length;
 var pagesTested = 0;
 
 pagesToTest.forEach(function(value) {
-  var request = http.get("http://localhost:3000" + value, function(res) { 
-    if (res.statusCode != 200) 
+  var request = http.get("http://localhost:3000" + value, function(res) {
+    if (res.statusCode != 200)
       throw new Error("http://localhost:3000" + value + " contains an error");
-    else 
+    else
       console.log("http://localhost:3000" + value + " has been tested correctly");
 
     pagesTested++;
     if (dev && pagesTested >= pages) process.exit(0);
-}).on('error', function(e) 
-  { 
-    console.log('Error'); throw e; 
+}).on('error', function(e)
+  {
+    console.log('Error'); throw e;
   });
 });
 

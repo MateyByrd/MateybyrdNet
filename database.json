@@ -1,0 +1,23 @@
+[
+	{
+		"title": "The Hunger Games Mockingjay part 2",
+		"price": 11,
+		"date": "20-11-2015 19:00",
+		"image-name": "hungergames.png",
+		"description": "This is the last part of the hunger games series"
+	},
+	{
+		"title": "James Bond Spectre",
+		"price": 0,
+		"date": "27-11-2015 19:00",
+		"image-name": "spectre.png",
+		"description": "This is the new James Bond film in 2015, we are going to this movie because of a party and thus there is no payment involved."
+	},
+	{
+		"title": "Star Wars: The Force Awakens",
+		"price": 13,
+		"date": undefined,
+		"image-name": "star-wars.png",
+		"description": "The new Star Wars movie"
+	}
+]

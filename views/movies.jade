@@ -1,0 +1,12 @@
+extends layout
+
+block head
+  link(rel='stylesheet', href='/stylesheets/pages/movies.css')
+
+block content
+  h5= Planned
+  .medium-12.columns
+    .movierow
+      - for (var i=0; i<movies.lenght; i++)
+        .movie
+          h5= movies[i].name;
