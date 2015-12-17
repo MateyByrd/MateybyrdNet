@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var path = require('path');
 var menuItems;
 
 require('fs').readFile('./public/jsons/menuItems.json', 'utf8', function (err, data) {

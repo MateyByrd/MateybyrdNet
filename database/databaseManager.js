@@ -29,17 +29,12 @@ DatabaseManager.prototype.AddItemToDatabase = function(collection, data, db, cal
  * @constructor
  */
 DatabaseManager.prototype.FindItemsByQuery = function(collection, query, db, callback) {
-  var cursor = db.collection(collection).find(
-    query
-  );
-  cursor.each(function(err, doc) {
-    assert.equal(err, null);
-    if (doc != null) {
-      console.log(doc);
-      return doc;
-    }
-    callback();
-  });
+    var collection = db.collection(collection);
+
+    collection.find(query).toArray(function (err, docs) {
+      if (err) throw err;
+      callback(docs);;
+    });
 }
 
 module.exports = DatabaseManager;
