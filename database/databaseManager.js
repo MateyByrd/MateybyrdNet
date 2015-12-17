@@ -1,36 +1,45 @@
-var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
-var ObjectId = require('mongodb').ObjectId;
-var url = 'mongodb://localhost:27017/movies';
 
-exports.getMovie(var movieName) {
+function DatabaseManager() {};
 
+/**
+ * AddItemToDatabase
+ * This function allows you to add data to a database
+ * @param collection The collection that the data should be placed in
+ * @param data The data you want to store
+ * @param db The database to store the data in
+ * @param callback A function to call when all actions are done
+ * @constructor
+ */
+DatabaseManager.prototype.AddItemToDatabase = function(collection, data, db, callback) {
+  db.collection(collection).insertOne(data, function(err, result) {
+    assert.equal(err, null);
+    console.log("Inserted data");
+    callback();
+  })
 }
 
-var findUsers = function(db, callback) {
-  var cursor = db.collection('authors').find( { "sir-name": "Belzer" } );
+/**
+ * FindItemByQuery
+ * A general function to find an item in a database
+ * @param collection The collection that you want to search
+ * @param query The query to execute
+ * @param db The database to work in
+ * @param callback A function to call when all actions are done
+ * @constructor
+ */
+DatabaseManager.prototype.FindItemsByQuery = function(collection, query, db, callback) {
+  var cursor = db.collection(collection).find(
+    query
+  );
   cursor.each(function(err, doc) {
     assert.equal(err, null);
-    if (doc != null)
+    if (doc != null) {
       console.log(doc);
-    else
-      callback();
+      return doc;
+    }
+    callback();
   });
-};
+}
 
-var insertDocument = function(db, callback) {
-  db.collection('authors').insertOne( {
-    "first-name": "Nick",
-    "sir-name": "Belzer"
-  }, function(err, result) {
-    assert.equal(err, null);
-    console.log("Inserted a document into the collection");
-  });
-};
-
-MongoClient.connect(url, function(err, db) {
-  assert.equal(null, err);
-  findUsers(db, function() {
-    db.close();
-  });
-});
+module.exports = DatabaseManager;
