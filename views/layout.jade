@@ -12,7 +12,10 @@ html
   body
     //- Header image and menu
     a(style={color: 'red', background: 'green'})
-    .header-image(style='background-image: url(#{image})')
+    - var style
+    - if (!image)
+      - style = 'height: 0px';
+    .header-image(style='background-image: url(#{image});' + style)
 
       .top-bar
         .medium-11.large-10.medium-centered.columns
@@ -26,13 +29,14 @@ html
                 - if (pageId == i) style += ' selected';
                   li
                     a(class=style, href='#{menuItems[i].link}', target='#{menuItems[i].target}')= menuItems[i].name
-
-      .copyright Image from
-        a(href='http://www.rom.ac')  ROM.AC
+      - if (image)
+        .copyright Image from
+          a(href='http://www.rom.ac')  ROM.AC
 
     .margin-top-1
     //- Actual page
     .row
+      block contentRow
       .main
         .medium-10.medium-centered.columns
           block content

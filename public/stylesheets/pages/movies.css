@@ -1,5 +1,46 @@
 
 .movierow {
-  background-color: #0a0a0a;
+  background-color: #eee;
+  padding: 1em 2em;
   color: white;
+  width: 100%;
+  border: 1px solid #ccc;
+  white-space: nowrap;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+  width: auto;
+}
+
+.movie {
+  position: relative;
+  display: inline-block;
+  margin-right: 1em;
+  width: 16em;
+  height: 24em;
+  white-space: normal;
+}
+
+.movieCover {
+  max-width: 100%;
+  height: 100%;
+  background-position: center bottom;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.movie .title {
+  /*display: none;*/
+  text-align: center;
+  position: absolute;
+  bottom: 0em;
+  padding: 0.2em 1em;
+  width: inherit;
+  font-size: 1em;
+  background-color: rgba(30, 30, 30, 0.7);
+}
+
+.movie:hover .title {
+  /*display: inherit;*/
+  font-size: 1.5em;
 }

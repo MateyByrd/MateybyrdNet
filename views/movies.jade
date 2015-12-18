@@ -3,10 +3,13 @@ extends layout
 block head
   link(rel='stylesheet', href='/stylesheets/pages/movies.css')
 
-block content
-  h5= Planned
-  .medium-12.columns
+block contentRow
+  .margin-top-2
+  h5 Planned
+  .small-12.columns(style='padding: 0px')
     .movierow
       - for (var i=0; i<movies.length; i++)
+        - var image = '/images/movies/' + movies[i].image;
         .movie
-          h5= movies[i].title
+          .movieCover(style='background-image: url(#{image});')
+          .title= movies[i].title

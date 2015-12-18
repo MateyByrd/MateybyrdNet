@@ -17,4 +17,21 @@ MovieDatabase.prototype.GetAllMovies = function(callback) {
   })
 }
 
+MovieDatabase.prototype.AddMovie = function(name, price, date, image, description, callback)
+{
+  MongoClient.connect(url, function(err, db) {
+    assert.equal(null, err);
+    var manager = new dbManager();
+    manager.AddItemToDatabase('movies', {
+      'title': name,
+      'price': price,
+      'date': date,
+      'image': image,
+      'description': description
+    }, db, function() {
+      db.close();
+    })
+  })
+}
+
 module.exports = MovieDatabase;
