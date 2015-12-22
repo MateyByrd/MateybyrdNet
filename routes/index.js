@@ -10,7 +10,11 @@ require('fs').readFile('./public/jsons/menuItems.json', 'utf8', function (err, d
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.locals.menuItems = menuItems.menuItems;
-  res.render('index', { pageId: 0, title: 'Mateybyrd.Net | Index', image: '/images/homepage.png'});
+  res.render('index', {
+    pageId: 0,
+    title: 'Mateybyrd.Net | Index',
+    image: '/images/homepage.png'
+  });
 });
 
 module.exports = router;

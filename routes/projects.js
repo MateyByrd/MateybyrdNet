@@ -14,7 +14,11 @@ require('fs').readFile('./public/jsons/menuItems.json', 'utf8', function (err, d
 router.get('/', function (req, res, next) {
   res.locals.projects = projects.projects;
   res.locals.menuItems = menuItems.menuItems;
-  res.render('projects', { pageId: 1, title: 'Mateybyrd.Net | Projects', image: '/images/projects.png' });
+  res.render('projects', {
+    pageId: 1,
+    title: 'Mateybyrd.Net | Projects',
+    image: '/images/projects.png'
+  });
 });
 
 // Working on Projects

@@ -11,6 +11,11 @@
       "target": ""
     },
     {
+      "name": "Movies",
+      "link": "/movies",
+      "target": ""
+    },
+    {
       "name": "Github",
       "link": "https://github.com/MateyByrd",
       "target": "_blank"

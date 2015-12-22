@@ -4,10 +4,14 @@ block head
   link(rel='stylesheet', href='/stylesheets/pages/movies.css')
 
 block contentRow
-  .small-12.columns(style='padding: 0px')
+  .small-12.columns(style='padding: 0px;')
     .movierow
       - for (var i=0; i<movies.length; i++)
-        - var image = '/images/movies/' + movies[i].image;
-        .movie
-          .movieCover(style='background-image: url(#{image});')
-          .title= movies[i].title
+        +movie
+
+
+mixin movie
+  - var image = '/images/movies/' + movies[i].image;
+  .movie
+    .movieCover(style='background-image: url(#{image});')
+    .title= movies[i].title
