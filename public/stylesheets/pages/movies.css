@@ -16,8 +16,8 @@
   position: relative;
   display: inline-block;
   margin-right: 1em;
-  width: 16em;
-  height: 24em;
+  width: 12em;
+  height: 18em;
   white-space: normal;
 }
 
@@ -42,5 +42,5 @@
 
 .movie:hover .title {
   /*display: inherit;*/
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
