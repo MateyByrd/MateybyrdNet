@@ -86,7 +86,7 @@ MovieDatabase.prototype.EditMovie = function(id, newData, callback)
     assert.equal(null, err);
     var manager = new dbManager();
     manager.EditItem('movies',
-      { 'movieId': id },
+      { '_id': id },
       newData,
       function(doc) {
         db.close();
