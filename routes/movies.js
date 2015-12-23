@@ -24,10 +24,10 @@ router.get('/', function (req, res, next) {
   });
 });
 
-//router.get('/:movieId', function(req, res) {
-//  moviedb.GetMovie({"id": req.params.id}, function(docs) {
-//    res.render('movieDisplay', { pageId: 2, title: "Mateybyrd.Net | " + docs.name, movie: docs });
-//  })
-//});
+router.get('/:movieId', function(req, res) {
+  moviedb.GetMovie({"id": req.params.id}, function(docs) {
+    res.render('movieDisplay', { pageId: 2, title: "Mateybyrd.Net | " + docs.name, movie: docs });
+  })
+});
 
 module.exports = router;
