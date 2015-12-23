@@ -33,10 +33,11 @@ html
         .copyright Image from
           a(href='http://www.rom.ac')  ROM.AC
 
-    .margin-top-1
     //- Actual page
+    block contentBefore
     .row
       block contentRow
+      .margin-top-1
       .main
         .medium-10.medium-centered.columns
           block content

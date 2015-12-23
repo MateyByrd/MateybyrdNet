@@ -3,7 +3,7 @@ extends layout
 block head
   link(rel='stylesheet', href='/stylesheets/pages/movies.css')
 
-block contentRow
+block contentBefore
   .small-12.columns(style='padding: 0px;')
     .movierow
       - for (var i=0; i<movies.length; i++)
