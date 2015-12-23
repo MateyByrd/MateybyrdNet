@@ -71,4 +71,29 @@ MovieDatabase.prototype.AddMovie = function(name, price, date, image, descriptio
   });
 }
 
+/**
+ * EditMovie
+ * A simple wrapper around the editItem method to be more specific to the
+ * movie database.
+ * @param id The id of the movie you want to edit
+ * @param newData The data you want to edit
+ * @param callback What action to perform after done editing the item in the
+ * movie.
+ */
+MovieDatabase.prototype.EditMovie = function(id, newData, callback)
+{
+  MongoClient.connect(url, function(err, db) {
+    assert.equal(null, err);
+    var manager = new dbManager();
+    manager.EditItem('movies',
+      { 'movieId': id },
+      newData,
+      function(doc) {
+        db.close();
+        callback(doc);
+      }
+    )
+  });
+}
+
 module.exports = MovieDatabase;
