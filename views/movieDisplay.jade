@@ -1,3 +1,13 @@
-//
-   Created by nickbelzer on 23/12/15.
+extends layout
 
+block head
+  link(rel='stylesheet', href='/stylesheets/pages/movieDisplay.css')
+
+block contentBefore
+    - var image = '/images/movies/' + movie.image;
+    .movie
+      .box
+        h4= movie.title
+        h5 Prijs: #{movie.price}
+        h5 Description
+        p= movie.description

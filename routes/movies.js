@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var MovieDatabase = require('../database/movieDatabase.js');
+var mongo = require('mongodb');
 
 var moviedb = new MovieDatabase();
 
@@ -24,10 +25,19 @@ router.get('/', function (req, res, next) {
   });
 });
 
-router.get('/:movieId', function(req, res) {
-  moviedb.GetMovie({"id": req.params.id}, function(docs) {
-    res.render('movieDisplay', { pageId: 2, title: "Mateybyrd.Net | " + docs.name, movie: docs });
-  })
+router.get('/:id', function(req, res) {
+  res.locals.menuItems = menuItems.menuItems;
+
+  var id = mongo.ObjectID(req.params.id);
+  moviedb.GetMovie({ _id: id }, function(docs) {
+    var data = docs[0];
+    //res.send(data);
+    res.render('movieDisplay', {
+      pageId: 2,
+      title: "Mateybyrd.Net | " + data.title,
+      movie: data
+    });
+  });
 });
 
 module.exports = router;

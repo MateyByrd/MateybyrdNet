@@ -12,6 +12,11 @@ block contentBefore
 
 mixin movie
   - var image = '/images/movies/' + movies[i].image;
-  .movie
+  .movie(href='#', onclick='$(\'##{movies[i]._id}\').toggle();')
     .movieCover(style='background-image: url(#{image});')
-    .title= movies[i].title
+    .title(id='#{movies[i]._id}')= movies[i].title
+
+mixin movieInfo
+  .row
+    .small-12.medium-10.columns
+      h5= movie
