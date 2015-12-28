@@ -4,17 +4,17 @@ block head
   link(rel='stylesheet', href='/stylesheets/pages/movies.css')
 
 block contentBefore
-  .small-12.columns(style='padding: 0px;')
-    .movierow
-      - for (var i=0; i<movies.length; i++)
-        +movie
+  - for (var i=0; i<movies.length; i++)
+    +movie
 
 
 mixin movie
-  - var image = '/images/movies/' + movies[i].image;
-  .movie(href='#', onclick='$(\'##{movies[i]._id}\').toggle();')
-    .movieCover(style='background-image: url(#{image});')
-    .title(id='#{movies[i]._id}')= movies[i].title
+  - var movie = movies[i];
+  - var image = '/images/movies/' + movie.image;
+  a(href='/movies/' + movie._id)
+    .movie
+      .movieCover(style='background-image: url(#{image});')
+      .title(id='#{movie._id}')= movie.title
 
 mixin movieInfo
   .row

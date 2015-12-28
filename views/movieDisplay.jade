@@ -8,6 +8,7 @@ block contentBefore
     .movie
       .box
         h4= movie.title
-        h5 Prijs: #{movie.price}
+        h5 Prijs #[small p.p.]: €#{movie.price}
+        br
         h5 Description
         p= movie.description
