@@ -9,6 +9,7 @@ body {
 
 .header-image {
   position: relative;
+  z-index: -1;
   background-position: center bottom;
   -webkit-background-size: cover;
   background-size: cover;
@@ -25,11 +26,18 @@ body {
   color: white;
 }
 
+.overtop-header {
+  margin-top: -3em;
+}
+
 .row main {
   background-color: rgb(240,240,240);
 }
 
 .top-bar {
+  position: absolute;
+  top: 0;
+  width: 100%;
   padding-left: 0;
   padding-right: 0;
 }

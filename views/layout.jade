@@ -15,22 +15,23 @@ html
     - if (!image)
       - style = 'height: 0px';
     .header-image(style='background-image: url(#{image});' + style)
-
-      .top-bar
-        .medium-11.large-10.medium-centered.columns
-          .top-bar-left(class='hide-for-small-only')
-            h4(style='color: white;') Mateybyrd
-              small .Net
-          .top-bar-right
-            ul.menu
-              - if (menuItems) for (var i=0; i<menuItems.length; i++)
-                - var style = 'menulink';
-                - if (pageId == i) style += ' selected';
-                  li
-                    a(class=style, href='#{menuItems[i].link}', target='#{menuItems[i].target}')= menuItems[i].name
       - if (image)
         .copyright Image from
           a(href='http://www.rom.ac')  ROM.AC
+
+    .top-bar
+      .medium-11.large-10.medium-centered.columns
+        .top-bar-left(class='hide-for-small-only')
+          h4(style='color: white;') Mateybyrd
+            small .Net
+        .top-bar-right
+          ul.menu
+            - if (menuItems) for (var i=0; i<menuItems.length; i++)
+              - var style = 'menulink';
+              - if (pageId == i) style += ' selected';
+                li
+                  a(class=style, href='#{menuItems[i].link}', target='#{menuItems[i].target}')= menuItems[i].name
+
 
     //- Actual page
     block contentBefore
