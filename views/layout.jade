@@ -7,8 +7,6 @@ html
     link(rel='stylesheet', href='/stylesheets/foundation.min.css')
     link(rel='stylesheet', href='/stylesheets/foundation-icons.css')
     link(rel='stylesheet', href='/stylesheets/mateybyrdnet.css')
-    script(src='/javascripts/foundation.min.js')
-    script(src='/javascripts/jquery.min.js')
     block head
   body
     //- Header image and menu
@@ -40,5 +38,9 @@ html
       block contentRow
       .margin-top-1
       .main
-        .medium-10.medium-centered.columns
+        .medium-10.medium-offset-1.columns
           block content
+
+    script(src='/javascripts/jquery.min.js')
+    script(src='/javascripts/foundation.min.js')
+    script(src='/javascripts/foundation.sticky.js')
