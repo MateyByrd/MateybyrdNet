@@ -3,6 +3,10 @@
 
 /* All the general css for each page */
 
+body {
+  background-color: #eee;
+}
+
 .header-image {
   position: relative;
   background-position: center bottom;
@@ -80,8 +84,8 @@
 }
 
 .box {
+  background-color: #fff;
   padding: 1em;
   margin-bottom: 1em;
-  /*box-shadow: 0 0 2px #aaa;*/
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
 }
