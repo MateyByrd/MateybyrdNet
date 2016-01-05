@@ -4,16 +4,15 @@ block head
   link(rel='stylesheet', href='/stylesheets/pages/projects.css')
 
 block content
-  .overtop-header
-    .medium-6.columns(style='padding: 0px;')
-      - for (var i=0; i<projects.length; i+=2)
-        +project
-    .medium-6.columns(style='padding: 0px;')
-      - for (var i=1; i<projects.length; i+=2)
-        +project
+  .medium-6.columns(style='padding: 0px;')
+    - for (var i=0; i<projects.length; i+=2)
+      +project
+  .medium-6.columns(style='padding: 0px;')
+    - for (var i=1; i<projects.length; i+=2)
+      +project
 
 mixin project
-        .small-12.columns(style='padding-left: 0.2em; padding-right: 0.2em; height: 100%')
+        .small-12.columns(style='height: 100%')
           .div(class=projects[i].labels[0].css)
             .project
               .name= projects[i].name
