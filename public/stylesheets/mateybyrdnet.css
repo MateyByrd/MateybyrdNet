@@ -55,6 +55,11 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+/* Hide the scrollbar */
+.top-bar ul.menu::-webkit-scrollbar {
+  display: none;
+}
+
 .top-bar ul {
   background-color: transparent;
 }
