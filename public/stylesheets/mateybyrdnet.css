@@ -20,7 +20,7 @@ body {
   background-color: rgba(30, 30, 30, 0.7);
   position: absolute;
   font-size: 0.7em;
-  bottom: 6px;
+  top: 6px;
   right: 0px;
   padding: 4px;
   color: white;
@@ -36,10 +36,11 @@ body {
 
 .top-bar {
   position: absolute;
-  top: 0;
+  top: calc(300px - 5.2em);
   width: 100%;
   padding-left: 0;
   padding-right: 0;
+  background-color: rgba(30,30,30,0.7);
 }
 
 .top-bar .columns {
