@@ -4,7 +4,7 @@ block head
   link(rel='stylesheet', href='/stylesheets/pages/movies.css')
 
 block content
-  .h4.box Upcoming movies
+  .h4.box Movie list
   - for (var i=0; i<movies.length; i++)
     +movie
 
@@ -12,9 +12,11 @@ mixin movie
   - var movie = movies[i];
   - var image = '/images/movies/' + movie.image;
   a(href='/movies/' + movie._id)
-    .medium-6.columns
+    .movie.medium-6.columns
       .box(style='height: 12em; padding:0;')
         .medium-3.columns(style='padding: 0')
           .movieCover(style='background-image: url(#{image});')
-        .movieInfo.medium-9.columns
-          .title(id='#{movie._id}')= movie.title
+        .movieInfo.medium-9.columns(style='padding: 0;')
+          .title= movie.title
+            .subtitle= movie.subtitle
+          .description= movie.description

@@ -8,19 +8,32 @@
 
 .movie {
   height: 12em;
+  margin-bottom: 1em;
+  color: black;
 }
 
 .movieCover {
   width: 100%;
-  height: 12em;
+  height: calc(12em - 2px); /* -2px because of the border */
   background-position: center center;
   -webkit-background-size: cover;
   background-size: cover;
 }
 
-.movie .title {
-  width: 100%;
-  height: auto;
+.movie .movieInfo .title {
+  text-transform: uppercase;
   padding: 0.2em 1em;
-  font-size: 1em;
+  font-size: 1.5em;
+  font-size: 2vw;
+  background-color: #efefef;
+  border-bottom: 1px solid #ccc;
+}
+
+.movie .movieInfo .title .subtitle {
+  color: #888;
+  font-size: 0.8em;
+}
+
+.movie .movieInfo .description {
+  padding: 0.4em;
 }
