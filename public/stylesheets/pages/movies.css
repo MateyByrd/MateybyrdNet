@@ -24,8 +24,12 @@
   text-transform: uppercase;
   padding: 0.2em 1em;
   font-size: 1.5em;
-  font-size: 2vw;
-  background-color: #efefef;
+  height: 3.2em;
+  overflow: hidden;
+}
+
+.movie .movieInfo .tags {
+  border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 }
 
@@ -35,5 +39,8 @@
 }
 
 .movie .movieInfo .description {
-  padding: 0.4em;
+  height: calc(7.2em - 2px);
+  border-top: 1px solid #ccc;
+  padding: 0.8em;
+  background-color: #f8f8f8;
 }
