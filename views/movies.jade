@@ -3,28 +3,19 @@ extends layout
 block head
   link(rel='stylesheet', href='/stylesheets/pages/movies.css')
 
-block contentBefore
+block content
   - for (var i=0; i<movies.length; i++)
     +movie
 
-
 mixin movie
-<<<<<<< HEAD
-  - var image = '/images/movies/' + movies[i].image;
-  a(href='movies/#{movies[i]._id}')
-    .movie
-      .movieCover(style='background-image: url(#{image});')
-      .title(id='#{movies[i]._id}')= movies[i].title
-=======
   - var movie = movies[i];
   - var image = '/images/movies/' + movie.image;
   a(href='/movies/' + movie._id)
-    .movie
-      .movieCover(style='background-image: url(#{image});')
-      .title(id='#{movie._id}')= movie.title
->>>>>>> 865eedb44d27bdf2cea20aba3a042a97458681d0
-
-mixin movieInfo
-  .row
-    .small-12.medium-10.columns
-      h5= movie
+    .movie.medium-6.columns
+      .box(style='height: 12em; padding:0;')
+        .small-3.columns(style='padding: 0')
+          .movieCover(style='background-image: url(#{image});')
+        .movieInfo.small-9.columns(style='padding: 0;')
+          .title= movie.title
+            .subtitle= movie.subtitle
+          .description= movie.description
