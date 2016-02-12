@@ -38,10 +38,7 @@ body {
   position: fixed;
   top: 0px;
   width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 2em;
-  padding-bottom: 2em;
+  padding: 2em 0;
   background-color: rgba(33, 33, 33, 0.4);
   border-bottom: 1px solid rgba(255,255,255,0.25);
 
@@ -52,8 +49,7 @@ body {
 
 .top-bar.scrolled {
   background-color: rgba(33, 33, 33, 1.0);
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding: 0.3em 0;
 }
 
 .top-bar .columns {
