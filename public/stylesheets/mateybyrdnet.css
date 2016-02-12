@@ -13,14 +13,14 @@ body {
   background-position: center bottom;
   -webkit-background-size: cover;
   background-size: cover;
-  height: 275px;
+  height: 400px;
 }
 
 .header-image .copyright {
   background-color: rgba(30, 30, 30, 0.7);
   position: absolute;
   font-size: 0.7em;
-  top: 6px;
+  bottom: 6px;
   right: 0px;
   padding: 4px;
   color: white;
@@ -35,12 +35,25 @@ body {
 }
 
 .top-bar {
-  position: absolute;
-  top: calc(300px - 5.2em);
+  position: fixed;
+  top: 0px;
   width: 100%;
   padding-left: 0;
   padding-right: 0;
-  background-color: rgba(30,30,30,0.7);
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background-color: rgba(33, 33, 33, 0.4);
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.top-bar.scrolled {
+  background-color: rgba(33, 33, 33, 1.0);
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .top-bar .columns {
@@ -63,19 +76,35 @@ body {
 
 .top-bar ul {
   background-color: transparent;
+  font-weight: 900;
+  display: table;
+  margin: 0 auto;
+}
+
+/*.top-bar-section ul {display: table; margin: 0 auto;}*/
+/*.top-bar-section ul li {display: table-cell;}*/
+
+.top-bar ul li {
+  display: table-cell;
 }
 
 .top-bar li a.menulink {
-  border-bottom: 2px solid #eee;
+  margin-left: .5em;
+  margin-right: .5em;
+  color: rgb(255,255,255);
+  font-size: 1.1em;
+  /*border-bottom: 3px solid #eee;*/
 }
 
 .top-bar li a.selected {
   /*background-color: #eee;*/
-  border-bottom: 2px solid #2199e8;
+  /*border-bottom: 3px solid #2199e8;*/
+  color: #2199e8;
 }
 
 .top-bar li:hover a:not(.selected)  {
-  border-bottom: 2px solid #ddd;
+  /*border-bottom: 3px solid #ddd;*/
+  color: #ccc
 }
 
 /*.top-bar li:hover *:not(.selected) {*/
