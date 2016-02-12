@@ -10,7 +10,11 @@ html
     block head
   body
     .top-bar
-      .row
+      .top-bar-title
+        span(data-responsive-toggle='responsive-menu', data-hide-for='medium')
+          span.menu-icon(data-toggle)
+          strong(style='color: white')  Mateybyrd.Net
+      .row(id='responsive-menu')
         .medium-10.medium-centered.columns
           //.top-bar-left(class='hide-for-small-only')
             h4(style='color: white;') Mateybyrd

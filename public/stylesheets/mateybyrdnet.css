@@ -77,9 +77,6 @@ body {
   margin: 0 auto;
 }
 
-/*.top-bar-section ul {display: table; margin: 0 auto;}*/
-/*.top-bar-section ul li {display: table-cell;}*/
-
 .top-bar ul li {
   display: table-cell;
 }
@@ -101,6 +98,20 @@ body {
 .top-bar li:hover a:not(.selected)  {
   /*border-bottom: 3px solid #ddd;*/
   color: #ccc
+}
+
+@media (min-width: 0px) and (max-width: 40em) {
+
+  .top-bar ul.menu {
+    white-space: normal;
+    display: block;
+    overflow: visible;
+  }
+
+  .top-bar ul li {
+    width: 100%;
+    display: block;
+  }
 }
 
 /*.top-bar li:hover *:not(.selected) {*/
