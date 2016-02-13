@@ -106,6 +106,7 @@ body {
     white-space: normal;
     display: block;
     overflow: visible;
+    margin-top: 0.5em;
   }
 
   .top-bar ul li {
