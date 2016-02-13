@@ -69,9 +69,9 @@ html
 
             topcoords = $elm.offset().top; // element's distance from top of page in pixels
 
-            if (wintop > 10) {
+            if (wintop > 0) {
               $elm.addClass('scrolled');
-            } else if (wintop <= 10) {
+            } else if (wintop <= 0) {
               $elm.removeClass('scrolled');
             }
           });

@@ -1,17 +1,17 @@
 {
   "menuItems": [
     {
-      "name": "Home",
+      "name": "HOME",
       "link": "/",
       "target": ""
     },
     {
-      "name": "Projects",
+      "name": "PROJECTS",
       "link": "/projects",
       "target": ""
     },
     {
-      "name": "Github",
+      "name": "GITHUB",
       "link": "https://github.com/MateyByrd",
       "target": "_blank"
     }
