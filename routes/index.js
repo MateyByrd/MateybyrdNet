@@ -13,7 +13,7 @@ router.get('/', function(req, res, next) {
   res.render('index', {
     pageId: 0,
     title: 'Mateybyrd.Net | Index',
-    image: '/images/homepage.png'
+    image: '/images/frontpage.svg'
   });
 });
 

@@ -17,7 +17,7 @@ router.get('/', function (req, res, next) {
   res.render('projects', {
     pageId: 1,
     title: 'Mateybyrd.Net | Projects',
-    image: '/images/projects.png'
+    image: '/images/projects.svg'
   });
 });
 
