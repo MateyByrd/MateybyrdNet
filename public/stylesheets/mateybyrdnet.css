@@ -10,8 +10,10 @@ body {
 .header-image {
   position: relative;
   z-index: -1;
+  /*background-attachment: fixed;*/
+  min-height: 400px;
   background-position: center bottom;
-  -webkit-background-size: cover;
+  background-repeat: no-repeat;
   background-size: cover;
   height: 400px;
 }
