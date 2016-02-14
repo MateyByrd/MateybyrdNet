@@ -17,6 +17,7 @@ html
           strong(style='color: white ;margin-left: 1em;') MATEYBYRD.NET
       .row(id='responsive-menu')
         .medium-10.medium-centered.columns
+          .title(data-hide-for='small') MATEYBYRD.NET
           ul.menu
             - if (menuItems) for (var i=0; i<menuItems.length; i++)
               - var style = 'menulink';
@@ -30,8 +31,8 @@ html
     - if (!image)
       - style = 'height: 0px';
     .header-image(style='background-image: url(#{image});' + style)
-      - if (image)
-        //.copyright Image from
+      // - if (image)
+        .copyright Image from
           a(href='http://www.rom.ac')  ROM.AC
 
     //- Actual page

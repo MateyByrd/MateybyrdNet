@@ -54,13 +54,28 @@ body {
   padding: 1em 0;
 }
 
+.top-bar .title {
+  display: none;
+}
+
+.top-bar.scrolled .title {
+  margin-top: 0.5em;
+  display: block;
+  float: left;
+  font-size: 0.9em;
+  font-weight: bolder;
+  color: rgba(255,255,255,0.6);
+  padding: 0 1em;
+  border-right: 1px solid rgba(255,255,255,0.25);
+  border-left: 1px solid rgba(255,255,255,0.25);
+}
+
 .top-bar .columns {
   padding: 0;
 }
 
 /* Make the menu bar scrollable if it's too big for the screen */
 .top-bar ul.menu {
-  padding-left: 1em;
   overflow: hidden;
   overflow-x: scroll;
   white-space: nowrap;
@@ -103,6 +118,10 @@ body {
 }
 
 @media (min-width: 0px) and (max-width: 40em) {
+
+  .top-bar.scrolled .title {
+    display: none;
+  }
 
   .top-bar ul.menu {
     white-space: normal;
