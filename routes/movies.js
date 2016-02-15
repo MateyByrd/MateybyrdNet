@@ -16,6 +16,7 @@ router.get('/', function (req, res, next) {
   res.locals.menuItems = menuItems.menuItems;
 
   moviedb.GetAllMovies(function(docs) {
+    console.dir(docs);
     res.render('movies', {
       pageId: 2,
       title: 'Mateybyrd.Net | Movies',

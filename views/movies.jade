@@ -5,11 +5,12 @@ block head
 
 block content
   - for (var i=0; i<movies.length; i++)
+    - var movie = movies[i];
     +movie
 
 mixin movie
-  - var movie = movies[i];
   - var image = '/images/movies/' + movie.image;
+  - var people = movie.people
   a(href='/movies/' + movie._id)
     .movie.medium-6.columns
       .box(style='height: 12em; padding:0;')
@@ -19,3 +20,13 @@ mixin movie
           .title= movie.title
             .subtitle= movie.subtitle
           .description= movie.description
+            - for (var p=0; p<people.length; p++)
+              - var person = people[p];
+              +person
+
+mixin person
+  - var name = person.name;
+  - var paid = person.paid;
+  .name= name
+    - if (paid == true)
+      | PAID
