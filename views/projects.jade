@@ -1,19 +1,28 @@
 extends layout
 
+block head
+  link(rel='stylesheet', href='/stylesheets/pages/projects.css')
+
 block content
-  p
-    h5 Active projects
-    - for (var i=0; i<projects.length; i++)
-      .medium-6.columns(style='padding-left: 0px;')
-        .div(class=projects[i].label)
-          .project
-            .name= projects[i].name
-              - if (projects[i].repository)
-                a(href=projects[i].repository, target='_blank')
-                  .label= projects[i].label
-              - else
-                .label= projects[i].label
-            .body
-              p= projects[i].description
+  .medium-6.columns(style='padding: 0px;')
+    - for (var i=0; i<projects.length; i+=2)
+      +project
+  .medium-6.columns(style='padding: 0px;')
+    - for (var i=1; i<projects.length; i+=2)
+      +project
+
+mixin project
+  .small-12.columns(style='height: 100%')
+    .div(class=projects[i].labels[0].css + ' border')
+      .project
+        .name= projects[i].name
+        .labels
+          - for (var l=0; l<projects[i].labels.length; l++)
+            .label(class=projects[i].labels[l].css)= projects[i].labels[l].text
+          - if (projects[i].repository)
+            a(href=projects[i].repository, target='_blank')
+              img(class='labelimage', src='/images/github-mark.png')
+        .body
+          p= projects[i].description
                 
                 

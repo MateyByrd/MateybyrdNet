@@ -1,0 +1,69 @@
+{
+	"projects": [
+		{
+			"name": "ARM2-D2",
+			"labels": [{
+          "text": "open-source",
+          "css": "open-source"
+			  },
+        {
+          "text": "development halted",
+          "css": "halted"
+      }],
+			"description": "A school project in my final year, I have to build a robot arm that is able to do some cool stuff.",
+			"repository": "https://github.com/MateyByrd/ARM2D2"
+		},
+		{
+			"name": "ExamPoll",
+      "labels": [{
+        "text": "open-source",
+        "css": "open-source"
+        },
+        {
+          "text": "done",
+          "css": "done"
+        }],
+			"description": "In our final year at school we will have an exam-party where we decorate the entire school in a special theme, to help choose the theme of the party we need a poll that everyone can enter.",
+      "repository": "https://github.com/Omniscimus/ExamPoll"
+		},
+		{
+			"name": "Chesster",
+      "labels": [{
+          "text": "open-source",
+          "css": "open-source"
+        },
+        {
+          "text": "released",
+          "css": "done"
+        }],
+			"description": "A personal project that I am working on together with a designer from Prague. A chess game for mobile devices.",
+      "repository": "https://github.com/MateyByrd/Chesster"
+		},
+		{
+			"name": "Movie Panel",
+      "labels": [{
+          "text": "open-source",
+          "css": "open-source"
+        },
+        {
+          "text": "worked on",
+          "css": "development"
+        }],
+			"description": "A personal project for me and my friends to manage things when we are going to the movies, for example who buys the tickets, who paid (for the tickets) etc.",
+      "repository": ""
+		},
+		{
+			"name": "Mateybyrd.Net",
+      "labels": [{
+          "text": "open-source",
+          "css": "open-source"
+        },
+        {
+          "text": "worked on",
+          "css": "development"
+        }],
+			"description": "One of the projects is building this website, currently not open source but it could be in the future.",
+      "repository": "https://github.com/MateyByrd/MateybyrdNet"
+		}
+	]
+}

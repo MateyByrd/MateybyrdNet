@@ -1,73 +1,168 @@
 
-@import url("/foundation/css/foundation.css");
+@import url("/public/stylesheets/foundation.min.css");
+
+/* All the general css for each page */
+
+body {
+  background-color: #eee;
+}
 
 .header-image {
   position: relative;
+  z-index: -1;
+  /*background-attachment: fixed;*/
+  min-height: 400px;
   background-position: center bottom;
-  -webkit-background-size: cover;
+  background-repeat: no-repeat;
   background-size: cover;
-  height: 225px;
-  margin-bottom: 0.5em;
+  height: 400px;
 }
 
 .header-image .copyright {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(30, 30, 30, 0.7);
   position: absolute;
   font-size: 0.7em;
   bottom: 6px;
   right: 0px;
   padding: 4px;
+  color: white;
 }
 
-.top-bar .row {
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+.overtop-header {
+  margin-top: -3em;
 }
 
-.top-bar li .selected {
-  border-bottom: 2px solid #2199e8;
+.row main {
+  background-color: rgb(240,240,240);
 }
 
-.top-bar li:hover *:not(.selected) {
-  border-bottom: 2px solid #ec5840;
+.top-bar {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  padding: 1.75em 0;
+  background-color: rgba(33, 33, 33, 0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
-.private .label {
-  background-color: #ec5840;
+.top-bar.scrolled {
+  background-color: rgba(33, 33, 33, 1.0);
+  padding: 1em 0;
 }
 
-.open-source .label {
-  background-color: #2199e8;
+.top-bar .title {
+  display: none;
 }
 
-.project {
-  padding-left: 1em;
+.top-bar.scrolled .title {
+  margin-top: 0.5em;
+  display: block;
+  float: left;
+  font-size: 0.9em;
+  font-weight: bolder;
+  color: rgba(255,255,255,0.6);
+  padding: 0 1em;
+  border-right: 1px solid rgba(255,255,255,0.25);
+  border-left: 1px solid rgba(255,255,255,0.25);
 }
 
-.open-source .project {
-  border-left: 5px solid #2199e8;
+.top-bar .columns {
+  padding: 0;
 }
 
-.private .project {
-  border-left: 5px solid #ec5840;
+/* Make the menu bar scrollable if it's too big for the screen */
+.top-bar ul.menu {
+  overflow: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
 }
 
-.project .name {
-  font-size: 1em;
+/* Hide the scrollbar */
+.top-bar ul.menu::-webkit-scrollbar {
+  display: none;
+}
+
+.top-bar ul {
+  background-color: transparent;
+  font-weight: 800;
+  display: table;
+  margin: 0 auto;
+}
+
+.top-bar ul li {
+  display: table-cell;
+}
+
+.top-bar li a.menulink {
+  margin-left: .5em;
+  margin-right: .5em;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.9em;
+  /*border-bottom: 3px solid #eee;*/
+}
+
+.top-bar li a.selected, .top-bar li:hover a:not(.selected){
+  color: rgb(255,255,255);
+  font-weight: bolder;
+}
+
+.top-bar.scrolled li a.selected {
+  /*background-color: #eee;*/
+  /*border-bottom: 3px solid #2199e8;*/
+  color: #2199e8;
+}
+
+@media (min-width: 0px) and (max-width: 40em) {
+
+  .top-bar.scrolled .title {
+    display: none;
+  }
+
+  .top-bar ul.menu {
+    white-space: normal;
+    display: block;
+    overflow: visible;
+    margin-top: 0.5em;
+  }
+
+  .top-bar ul li {
+    width: 100%;
+    display: block;
+  }
+}
+
+/*.top-bar li:hover *:not(.selected) {*/
+  /*border-bottom: 2px solid #ddd;*/
+/*}*/
+
+
+.margin-top-1 {
   margin-top: 1em;
-  padding-right: 1em;
-  padding-bottom: 4px;
-  border-bottom: 1px solid #eee;
 }
 
-.name .label {
-  margin-left: 0.5em;
+.margin-top-2 {
+  margin-top: 2em;
 }
 
-.open-source .project:hover {
-  border-left: 5px solid #ec5840;
+.labelimage {
+  height: 1.5em;
+  widht: auto;
+  margin-left: 0.2em;
 }
 
-.open-source .project:hover .label {
-  background-color: #ec5840;
+.box {
+  background-color: #fff;
+  padding: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #ddd;
+}
+
+.columns {
+  padding-left: 0.2em;
+  padding-right: 0.2em;
 }

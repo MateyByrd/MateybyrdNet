@@ -1,0 +1,17 @@
+extends layout
+
+block head
+  link(rel='stylesheet', href='/stylesheets/pages/movieDisplay.css')
+
+block content
+  .margin-top-1
+  - var image = '/images/movies/' + movie.image;
+  .movie
+    .medium-3.columns.box.right(style='padding: 0;')
+      img.movieCover(src=image)
+    .medium-9.columns.box
+      h4.title= movie.title
+      h5 Prijs: #{movie.price}
+      h5 Data: #{movie.date}
+      h5 Description
+      p= movie.description

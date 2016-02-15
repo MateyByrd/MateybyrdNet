@@ -1,0 +1,32 @@
+extends layout
+
+block head
+  link(rel='stylesheet', href='/stylesheets/pages/movies.css')
+
+block content
+  - for (var i=0; i<movies.length; i++)
+    - var movie = movies[i];
+    +movie
+
+mixin movie
+  - var image = '/images/movies/' + movie.image;
+  - var people = movie.people
+  a(href='/movies/' + movie._id)
+    .movie.medium-6.columns
+      .box(style='height: 12em; padding:0;')
+        .small-3.columns(style='padding: 0')
+          .movieCover(style='background-image: url(#{image});')
+        .movieInfo.small-9.columns(style='padding: 0;')
+          .title= movie.title
+            .subtitle= movie.subtitle
+          .description= movie.description
+            - for (var p=0; p<people.length; p++)
+              - var person = people[p];
+              +person
+
+mixin person
+  - var name = person.name;
+  - var paid = person.paid;
+  .name= name
+    - if (paid == true)
+      | PAID

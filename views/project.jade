@@ -1,0 +1,33 @@
+
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    title= title
+
+    link(rel='stylesheet', href='/stylesheets/foundation.min.css')
+    link(rel='stylesheet', href='/stylesheets/foundation-icons.css')
+    link(rel='stylesheet', href='/stylesheets/mateybyrdnet.css')
+    script(src='/javascripts/foundation.min.js')
+    block head
+
+body
+  .row
+    .medium-3.columns(style='background-color: #eee; border-right: 1px solid black;')
+      .margin-top-1
+      h3= projectName
+      .margin-top-2
+      ul.menu.vertical
+        - if (menuItems)
+          - for (var i=0; i<menuItems.length; i++)
+            - var style = 'menulink';
+            - if (pageId == i) style += ' selected';
+              li(style='border-top: 1px solid #aaa;')
+                a(class=style, href='#{menuItems[i].link}', target='#{menuItems[i].target')= menuItems[i].name
+    .medium-9.columns
+      .margin-top-2
+      p This page will include information about the ARM2D2 project.
+      .marging-top-1
+      p This is another item

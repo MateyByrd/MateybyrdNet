@@ -7,31 +7,71 @@ html
     link(rel='stylesheet', href='/stylesheets/foundation.min.css')
     link(rel='stylesheet', href='/stylesheets/foundation-icons.css')
     link(rel='stylesheet', href='/stylesheets/mateybyrdnet.css')
-    script(src='/javascripts/foundation.js')
+    block head
   body
-    //- Header
     .top-bar
-      .row
-        .medium-11.medium-centered.columns
-          .top-bar-left
-            a(href="/")
-              h4 Mateybyrd
-                small .Net
-          .top-bar-right
-            ul.menu
-              - if (menuItems) for (var i=0; i<menuItems.length; i++)
-                - var style = '';
-                - if (pageId == i) style = 'selected';
+      .top-bar-title
+        span(data-responsive-toggle='responsive-menu',
+        data-hide-for='medium', style='padding: 1em;')
+          span.menu-icon(data-toggle)
+          strong(style='color: white ;margin-left: 1em;') MATEYBYRD.NET
+      .row(id='responsive-menu')
+        .medium-10.medium-centered.columns
+          .title(data-hide-for='small') MATEYBYRD.NET
+          ul.menu
+            - if (menuItems) for (var i=0; i<menuItems.length; i++)
+              - var style = 'menulink';
+              - if (pageId == i) style += ' selected';
                 li
                   a(class=style, href='#{menuItems[i].link}', target='#{menuItems[i].target}')= menuItems[i].name
 
-    //- Header image
+    //- Header image and menu
     a(style={color: 'red', background: 'green'})
-    .header-image(style='background-image: url(#{image})')
-      .copyright Image from 
-        a(href='httpL//www.rom.ac') ROM.AC
-    
+    - var style
+    - if (!image)
+      - style = 'height: 0px';
+    .header-image(style='background-image: url(#{image});' + style)
+      // - if (image)
+        .copyright Image from
+          a(href='http://www.rom.ac')  ROM.AC
+
     //- Actual page
+    block contentBefore
     .row
-      .medium-10.medium-centered.columns
+      block contentRow
+      .margin-top-1
+      .main
+        .medium-10.medium-centered.columns
           block content
+
+    script(src='/javascripts/jquery.min.js')
+    script(src='/javascripts/foundation.min.js')
+    script(type='text/javascript').
+      $(document).foundation();
+    script(type='text/javascript').
+      $(function() {
+        var $elems = $('.top-bar');
+        var winheight = $(window).height();
+        var fullheight = $(document).height();
+
+        $(window).scroll(function () {
+          animate_elems();
+        });
+
+        function animate_elems() {
+          wintop = $(window).scrollTop(); // calculate distance from top of window
+
+          // loop through each item to check when it animates
+          $elems.each(function () {
+            $elm = $(this);
+
+            topcoords = $elm.offset().top; // element's distance from top of page in pixels
+
+            if (wintop > 5) {
+              $elm.addClass('scrolled');
+            } else if (wintop <= 5) {
+              $elm.removeClass('scrolled');
+            }
+          });
+        }
+      });
