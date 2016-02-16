@@ -5,7 +5,7 @@ var exec = require('child_process').exec;
 
 router.get('/uptime', function(req, res, next) {
   exec('uptime', function(error, stdout, stderr) {
-    res.send("Uptime: " + stdout);
+    res.send(stdout);
   });
 });
 
