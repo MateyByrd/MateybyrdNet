@@ -10,9 +10,10 @@ router.get('/uptime', function(req, res, next) {
 });
 
 router.get('/update', function(req, res, next) {
+  res.send('updating');
   exec('/srv/www/updateDev.sh', function(err, stdout, stderr) {
     if (err) throw err;
-    res.send(stdout);
+    console.log(stdout);
   });
 });
 
