@@ -4,6 +4,10 @@ var sys = require('util');
 var exec = require('child_process').exec;
 var execFile = require('child_process').execFile;
 
+router.get('/', function(req, res, next) {
+  res.render('stats');
+});
+
 router.get('/uptime', function(req, res, next) {
   exec('uptime', function(error, stdout, stderr) {
     res.send(stdout);
