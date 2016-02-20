@@ -15,10 +15,10 @@ router.get('/uptime', function(req, res, next) {
 });
 
 router.get('/update', function(req, res, next) {
+  res.send("Updating the website... please remain calm.");
   execFile('node', ['/srv/www/updateDev.js'], function(err, stdout, stderr) {
     if (err) throw err;
     console.log(stdout);
-    res.send(stdout);
   });
 });
 
