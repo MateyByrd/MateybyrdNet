@@ -14,4 +14,4 @@ branches:
     - dev
 
 after_succes:
-  - curl http://dev.mateybyrd.net/stats/update
+  "curl dev.mateybyrd.net/stats/update"
