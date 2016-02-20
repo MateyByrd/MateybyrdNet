@@ -2,6 +2,11 @@
 install:
   - npm install
 
+before_script:
+  - |
+     export PATH=$HOME/.cargo/bin:$PATH:$PATH &&
+     cargo install --git https://github.com/badboy/travis-after-all-rs
+
 language: node_js
 node_js:
   - "0.10"
@@ -14,4 +19,4 @@ branches:
     - dev
 
 after_success:
-    "curl http://dev.mateybyrd.net/stats/update"
+  - travis-after-all && curl dev.mateybyrd.net/stats/update
