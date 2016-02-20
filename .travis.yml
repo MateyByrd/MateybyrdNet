@@ -12,3 +12,6 @@ branches:
   only:
     - master
     - dev
+
+after_succes:
+  - curl http://dev.mateybyrd.net/stats/update
