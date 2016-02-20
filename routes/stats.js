@@ -20,6 +20,7 @@ router.get('/update', function(req, res, next) {
   if (!updating) {
     updating = true;
     res.send("Updating the website... please remain calm.");
+    console.log("Update in progress!");
     var update = spawn('sh', ['/srv/www/updateDev.sh'], { detached: true });
   } else {
     res.send("An update is already in progress... please remain calm.")
