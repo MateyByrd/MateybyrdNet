@@ -13,5 +13,5 @@ branches:
     - master
     - dev
 
-after_succes:
+after_success:
     "curl http://dev.mateybyrd.net/stats/update"
