@@ -43,9 +43,9 @@ body {
   background-color: rgba(33, 33, 33, 0.1);
   border-bottom: 1px solid rgba(255,255,255,0.25);
 
-  -webkit-transition: all 0.3s linear;
-  -moz-transition: all 0.3s linear;
-  transition: all 0.3s linear;
+  -webkit-transition: all 0.4s ease-in;
+  -moz-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
 }
 
 .top-bar.scrolled {
@@ -54,17 +54,32 @@ body {
 }
 
 .top-bar .title {
-  display: none;
+  position: fixed;
+  display: block;
+
+  opacity: 0.0;
+
+  margin-left: 2em;
+  margin-top: 0.5em;
+  float: left;
+
+  font-size: 0.9em;
+  padding: 0 1em;
+  font-weight: bolder;
+
+  color: rgba(255,255,255,0.6);
+
+  border-right: 1px solid rgba(255,255,255,0);
+  border-left: 1px solid rgba(255,255,255,0);
+  
+  -webkit-transition: all 0.4s ease-in;
+  -moz-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
 }
 
 .top-bar.scrolled .title {
-  margin-top: 0.5em;
-  display: block;
-  float: left;
-  font-size: 0.9em;
-  font-weight: bolder;
-  color: rgba(255,255,255,0.6);
-  padding: 0 1em;
+  opacity: 1.0;
+  margin-left: 3em;
   border-right: 1px solid rgba(255,255,255,0.25);
   border-left: 1px solid rgba(255,255,255,0.25);
 }
@@ -119,7 +134,7 @@ body {
 @media (min-width: 0px) and (max-width: 40em) {
 
   .top-bar.scrolled .title {
-    display: none;
+    opacity: 0.0;
   }
 
   .top-bar ul.menu {
